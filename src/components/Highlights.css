@@ -1,0 +1,107 @@
+#highlights {
+  padding: var(--padding-site);
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+#highlights-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 3 / span 8;
+}
+
+#highlights-header h2 {
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: var(--highlight-dark-gray);
+}
+
+#cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  grid-column: 3 / span 8;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--highlight-light-gray);
+  border-radius: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.card h3 {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight:700;
+  color: var(--highlight-dark-gray);
+}
+
+.card strong {
+  color: var(--primary-yellow);
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  -webkit-text-stroke: 4px var(--primary-gray);
+  paint-order: stroke fill;
+}
+
+.card > img {
+  width: 265px;
+  height: 185px;
+  background-color: var(--secondary-light-pink);
+  width: 100%;
+  object-fit: cover;
+}
+
+.card a {
+  text-decoration: none;
+  color: var(--highlight-dark-gray);
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 15px;
+}
+
+.card p {
+  line-height: 1.5;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  color: var(--highlight-dark-gray);
+}
+
+.card-header, .card p, .card a {
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  #highlights {
+    grid-template-columns: 1fr;
+  }
+
+  #highlights-header, #cards {
+    grid-column: auto;
+  }
+
+  #cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
