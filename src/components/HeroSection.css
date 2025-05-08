@@ -1,0 +1,57 @@
+#hero {
+  background-color: var(--primary-gray);
+  background: linear-gradient(180deg, var(--primary-gray) 85%, white 15%);
+  padding: var(--padding-site);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  align-items: start;
+}
+
+#hero-text {
+  grid-column: 3 / span 4;
+}
+
+#hero h1 {
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  font-size: 56px;
+  color: var(--primary-yellow);
+  margin-bottom: 0;
+}
+
+#hero h2 {
+  font-family: 'Markazi Text', serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: white;
+  margin-top: -10px;
+}
+
+#hero p {
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  line-height: 1.4;
+}
+
+#hero img {
+  grid-column: 8 / span 3;
+  width: 375px;
+  height: 403px;
+  width: 100%;
+  background-color: var(--highlight-light-gray);
+  margin: 30px 0;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr;
+  }
+
+  #hero-text, #hero img {
+    grid-column: auto;
+  }
+}

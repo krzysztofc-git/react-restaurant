@@ -1,0 +1,77 @@
+header {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  padding: var(--padding-site);
+  align-items: center;
+  align-content: center;
+  height: 122px;
+}
+
+header nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--highlight-dark-gray);
+  font-family: 'Karla', sans-serif;
+  font-weight: medium;
+  font-size: 20px;
+}
+
+header a:has(img[alt~='logo']) {
+  grid-column: 3 / span 2;
+}
+
+header a img[alt~='logo'] {
+  height: 54px;
+}
+
+header nav {
+  grid-column: 5 / span 6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#hamburger-menu, #basket-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header img, header nav {
+    display: none;
+  }
+
+  header {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+    height: 90px;
+  }
+
+  #hamburger-menu, #basket-icon {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+
+  a:has(#hamburger-menu), a:has(#basket-icon) {
+    width: fit-content;
+  }
+
+  #hamburger-menu {
+    grid-column: 1;
+  }
+
+  #basket-icon {
+    grid-column: 2;
+    justify-self: end;
+  }
+}
